@@ -1,0 +1,8 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+10.0.22.6	node1005 chef-client1
+10.0.22.5	node1004 chef-client2
+10.0.22.4	node1003 chef-client3
+10.0.22.3	node1002 chef-client4
+10.0.22.2	node1001 chef-client5
+10.0.22.8	boc chef-client6
+10.0.22.7	opsserver chef-server repo-server dns-server

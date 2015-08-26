@@ -1,0 +1,24 @@
+
+The default os env is CentOS 6.6 , the python runtime is python-2.6.6.
+
+1- install python-devel-2.6.6 
+    sudo rpm -ivh python-devel-2.6.6-52.el6.x86_64.rpm
+
+2- install python-pip
+    You must get the script "get-pip.py", put it to your workdir, and execute:
+         sudo python get-pip.py
+
+3- install fabric
+    sudo pip install fabric
+
+4- install ncurse-devel
+	sudo yum -y install ncurses-devel.x86_64
+
+5-  install readline
+
+	cd readline-xxx ; python setup.py install 
+
+6. install ishell
+	cd ishell-xxx ; python setup.py install 
+
+7. install 

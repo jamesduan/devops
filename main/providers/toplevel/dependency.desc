@@ -1,0 +1,67 @@
+dependencies:
+
+ - group:com.magima.iaas
+   desc: iaas installer
+   id: 40accb72-0409-42e1-9aba-837c0ee05115
+   version: 1.0
+   classifier: dev
+   type:
+
+ - group:com.magima.iaas
+   desc: prepare dns.
+   id: 2bd20aea-6e83-432c-8fb0-968fa3316179
+   version: 1.0
+   classifier: dev
+   type:
+
+ - group:com.magima.iaas
+   desc:  prepare baseline warehouse
+   id: 2bfdfc76-2df6-40a6-976b-9e7a97d7f8e1
+   version: 1.0
+   classifier: dev
+   type:
+
+
+ - group:com.magima.iaas
+   desc: prepare chef server
+   id: a1d23af7-930a-4b2e-b5e6-bbdeca71484a
+   version: 1.0
+   classifier: dev
+   type:
+
+ - group:com.magima.iaas
+   desc: prepare business meta data
+   id: 77efce60-d263-44d4-92ec-9b66e69608f5
+   version: 1.0
+   classifier: dev
+   type:
+
+ - group:com.magima.iaas
+   desc: paas installer
+   id: e6fd8dd4-b79d-42f3-990a-85a7ba46683c
+   version: 1.0
+   classifier: dev
+   type:
+
+ - group:com.magima.iaas
+   desc: saas installer
+   id: da13c07b-e0ce-4012-9f63-8705f4cf4aeb
+   version: 1.0
+   classifier: dev
+   type:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

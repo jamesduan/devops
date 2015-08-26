@@ -1,0 +1,12 @@
+<DeployDesign>
+	<DesignMeta>
+		<Author></Author>
+		<Datetime></Datetime>
+		<Version></Version>
+	</DesignMeta>
+
+	<DeployedTargets>
+		<DeployedTarget>{TargetUID}</DeployedTarget>
+		<DeployedTarget>{TargetUID}</DeployedTarget>
+	</DeployedTargets>
+</DeployDesign>

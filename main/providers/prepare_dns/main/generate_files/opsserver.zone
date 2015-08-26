@@ -1,0 +1,9 @@
+$TTL 1D
+@	IN SOA	@ opsserver. (
+					0	; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+	NS	@
+	A	10.0.22.7

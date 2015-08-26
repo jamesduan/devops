@@ -1,0 +1,297 @@
+<DeployDesign>
+	<DesignMeta>
+		<Author></Author>
+		<Datetime></Datetime>
+		<Version></Version>
+	</DesignMeta>
+
+	<Roles>
+		<Role RoleUID="5aede9b6-d77a-43ad-be13-5479c40c1763" Name="Production_Persistence_Normal_Zookeeper"
+				CloudLayer="PAAS"
+				SystemLayer="Persistence" 
+				Plane="Production"
+				Type="HorizontalAppRole" 
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+ 				<Provider SpecName="initzkdata" ProviderUUID="7fc3076b-5c32-4149-ab4f-541e9c4cc6c3" Version="1.0" CloudLayer="DAAS" Demension=""></Provider>
+		</Role>
+
+		<Role RoleUID="e1a3d410-50fe-4886-b8aa-1e54cb5d3f59" Name="Production_Persistence_Normal_Mysql_Master"
+				CloudLayer="PAAS"
+				SystemLayer="Persistence"
+				Plane="Production"
+				Type="HorizontalAppRole" 
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+ 
+ 				<Provider SpecName="mysql_start_rep-mm" ProviderUUID="3d48809c-3c7a-410f-b194-e073f77e5196" Version="1.1" CloudLayer="DAAS" Demension="">
+				</Provider>
+ 				<Provider SpecName="mysql_mvdata" ProviderUUID="c90c3715-d914-44a1-b59e-51acb3916845" Version="1.0" CloudLayer="DAAS" Demension="">
+				</Provider>
+ 				<Provider SpecName="mysqlpassword" ProviderUUID="c3dbcd1e-cac3-41ab-9dd0-290eeed69559" Version="1.0" CloudLayer="DAAS" Demension=""></Provider>
+		</Role>
+
+		<Role RoleUID="66136a4b-a95b-4085-a1b9-0bf72de4be17" Name="Production_Persistence_Normal_Mysql_Slave"
+				CloudLayer="PAAS"
+				SystemLayer="Persistence"
+				Plane="Production"
+				Type="HorizontalAppRole" 
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+ 
+		</Role>
+		
+		<Role RoleUID="e22979b4-89e3-4b38-9267-f0040d017ad8" Name="Production_Persistence_Normal_MongoDB_Master"
+				CloudLayer="PAAS"
+				SystemLayer="Persistence"
+				Plane="Production"
+				Type="HorizontalAppRole" 
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+ 
+ 				<Provider SpecName="mongodb_start_ms" ProviderUUID="a2cf1140-46eb-4ecc-8e8e-ffae65d1a63d" Version="1.1" CloudLayer="DAAS" Demension=""></Provider>
+ 				<Provider SpecName="mongodb_mvdata" ProviderUUID="9b5188fc-e3d4-4e3f-80e3-077e94a33419" Version="1.1" CloudLayer="DAAS" Demension=""></Provider>
+		</Role>
+
+		<Role RoleUID="7a4aef85-f2b9-4869-adc7-6bdbce8303e7" Name="Production_Persistence_Normal_MongoDB_Slave"
+				CloudLayer="PAAS"
+				SystemLayer="Persistence"
+				Plane="Production"
+				Type="HorizontalAppRole" 
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+ 
+ 				<Provider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></Provider>
+		</Role>
+
+		<Role RoleUID="bfe9bd78-18c6-4f7b-9918-cbca56dd36e6" Name="Production_Persistence_Normal_TFS"
+				CloudLayer="PAAS"
+				SystemLayer="Persistence"
+				Plane="Production"
+				Type="HorizontalAppRole"
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+ 
+ 				<Provider SpecName="registerTfsApp" ProviderUUID="0c18319c-dac0-4bb4-85bb-b5301bb4dc22" Version="1.0" CloudLayer="DAAS" Demension=""></Provider>
+		</Role>
+
+		<Role RoleUID="35bd2a8e-0786-4d3c-b3ee-15e54505b26a" Name="Production_Persistence_Normal"
+				CloudLayer="PAAS"
+				SystemLayer="Persistence"
+				Plane="Production"
+				Type="HorizontalAppRole"
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+		</Role>
+
+		<Role RoleUID="89cb5632-639e-4dc8-a11e-e3e5ed2ac059" Name="Production_Access_Normal"
+				CloudLayer="SAAS"
+				SystemLayer="Access"
+				Plane="Production"
+				Type="HorizontalAppRole"
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+		</Role>
+
+		<Role RoleUID="16fa6d16-8812-4130-ad98-aa254de1f797" Name="Production_Access_Normal_APIGW"
+				CloudLayer="SAAS"
+				SystemLayer="Access"
+				Plane="Production"
+				Type="HorizontalAppRole"
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+		</Role>
+
+		<Role RoleUID="cce754ab-1de6-43c1-93c3-4723a19e0354" Name="Production_Access_Normal_SLBGW"
+				CloudLayer="SAAS"
+				SystemLayer="Access"
+				Plane="Production"
+				Type="HorizontalAppRole"
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+		</Role>
+
+		<Role RoleUID="99794352-2103-4035-bcbd-24eb24147220" Name="Production_Presentation_Normal"
+				CloudLayer="SAAS"
+				SystemLayer="Presentation"
+				Plane="Production"
+				Type="HorizontalAppRole"
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+		</Role>
+
+		<Role RoleUID="07701b57-ea42-4045-97aa-317202ac908a" Name="Production_BusinessLogic_Base"
+				CloudLayer="SAAS"
+				SystemLayer="BusinessLogic"
+				Plane="Production"
+				Type="HorizontalAppRole"
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+		</Role>
+
+		<Role RoleUID="1a878a41-7c98-4a9b-87a3-7c35c675fcfd" Name="Production_BusinessLogic_Normal"
+				CloudLayer="SAAS"
+				SystemLayer="BusinessLogic"
+				Plane="Production"
+				Type="HorizontalAppRole"
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain> </Role>
+
+		<Role RoleUID="ca718c94-0888-47eb-9a4d-03d72cfce441" Name="Production_BusinessLogic_Normal_ImageService"
+				CloudLayer="SAAS"
+				SystemLayer="BusinessLogic"
+				Plane="Production"
+				Type="HorizontalAppRole"
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+		</Role>
+
+		<Role RoleUID="65f9048d-212f-437f-a992-47aa6d7b0ba0" Name="Production_BusinessLogic_Advanced"
+
+				CloudLayer="SAAS"
+				SystemLayer="BusinessLogic"
+				Plane="Production"
+				Type="HorizontalAppRole"
+				Level="advanced">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+		</Role>
+
+		<Role RoleUID="e6f51ecd-713d-42cd-a681-371c6ee8213d" Name="Production_Persistence_Normal_Tomcat"
+				CloudLayer="PAAS"
+				SystemLayer="Persistence" 
+				Plane="Production"
+				Type="HorizontalAppRole" 
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+		</Role>
+
+		<Role RoleUID="67d38d20-5301-476b-86e2-e9d292c185c1" Name="Production_Persistence_Normal_Jetty"
+				CloudLayer="PAAS"
+				SystemLayer="Persistence" 
+				Plane="Production"
+				Type="HorizontalAppRole" 
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+		</Role>
+
+		<Role RoleUID="9dcfd47e-d93d-44ed-b47c-d7f4ad883cd0" Name="Support_Access_Normal_BocGW"
+				CloudLayer="PAAS"
+				SystemLayer="Persistence" 
+				Plane="Production"
+				Type="HorizontalAppRole" 
+				Level="normal">
+
+				<RoleDeployConstrain>
+					<DataCenter>local</DataCenter>
+					<Network AllowCrossDataCenter="false"></Network>
+					<EnvCluster IsNeeded="true" AllowCrossNetwork="false" AllowAutoScalable="true" MinNodes="2" MaxNode="200"></EnvCluster>
+				</RoleDeployConstrain>
+		</Role>
+
+		<!-- 映射到实现层面时，Role的全名构成规范：
+			RoleName = Plane.SystemLayer.level[.RoleName]
+
+			如：
+				Production.Persistence.Normal   				// mysqlserver 部署的机器角色
+				Production.Persistence.Normal.FastDFS.DataNode 	//
+				Procudtion.Persistence.Normal.Mysql.Master
+				Procudtion.Persistence.Normal.Mysql.Slave
+				Production.Access.Normal        				// IOBalance 、ApiGateway ...
+				Production.BusinessLogic.Topic
+				Production.Presentation.boss4mobile
+				Support.WholeSystem.Normal.Nagios				// 持有该角色的 Host 允许安装一个Nagios 
+		  
+		-->
+	</Roles>
+	<RoleRelations>
+		<Excluding>
+			<RoleRef >{role_uid}</RoleRef>
+			<RoleRef >{role_uid}</RoleRef>
+		</Excluding>
+	</RoleRelations>
+</DeployDesign>

@@ -1,0 +1,1698 @@
+<DeployDesign>
+	<DesignMeta>
+		<Author></Author>
+		<Datetime></Datetime>
+		<Version></Version>
+	</DesignMeta>
+	
+	<Targets>
+		<!--目前，Target 仅针对组件，未来再考虑包括其他非组件的Artifacts 
+		ArtifactType: 
+			逻辑实体：如各种应用、服务的组件
+			属性实体：如各种配置文件、元数据文件等
+			数据实体：如业务数据、系统默认初始化数据等
+		-->
+	<!-- 
+		<Target TargetUID="2f92097a-3840-4b96-b352-8bef6423d26d" SpecName="topic" specVersion="1.0" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="LogicalEntity"
+				Plane="Production">
+				
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="java" Type="jetty" 
+								SpecName="jetty" MinVersion="9.0" MaxVersion="9.0">
+								<ContainerPart SpecName="mysql-connector-java" MinVersion="5.1.26" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="log4j2" MinVersion="2.1" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="dom4j-dev" MinVersion="4.0" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[8101,25402]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+		-->
+		
+		<Target TargetUID="faa734d8-11a6-4b4b-b5ab-f15b07c87129" SpecName="zookeeper" specVersion="3.4.6" 
+				CloudLayer="PAAS"
+				SystemLayer="Persistence"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="d0f67793-c9f0-4824-bd0b-9c5dad4f3e4f" SpecName="mysql" specVersion="5.6.20" 
+				CloudLayer="PAAS"
+				SystemLayer="Persistence"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="b73051cd-ec84-490d-8d14-ef5f8c9e302c" SpecName="mongodb" specVersion="2.6.4" 
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="837e13cc-8f98-4cbd-8cae-f113340524a7" SpecName="tfs" specVersion="2.2.13" 
+
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="storage"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="5f67833e-a24e-418c-a349-57c6b279e7d7" SpecName="redis" specVersion="2.4.10" 
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="4ae45680-0332-4ed9-a3fd-58859ffff4d7" SpecName="rabbitmq-server" specVersion="3.1.5" 
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="aec6b425-de39-4335-be9e-a6582ebbe6d3" SpecName="memcached" specVersion="1.4.4" 
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="storage"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="dcbf674c-21e9-492f-b24a-2a78284bea4c" SpecName="openresty" specVersion="1.5.11.1" 
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="storage"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+
+
+		<Target TargetUID="ee3a68eb-42cd-4c44-ad8a-6e04db921c24" SpecName="iobalancer" specVersion="1.0.13.5" 
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="storage"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="100ae676-a842-46d0-9713-093e4b333839" SpecName="apigw" specVersion="1.0.149.5" 
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="storage"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="c43b39fa-25e9-43f7-ac8c-fabd80562ba3" SpecName="slbgateway" specVersion="1.0.177.111" 
+				CloudLayer="PAAS" 
+				SystemLayer="Access"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="aa34575a-cc5c-4cdb-9b75-24c6de6a6c0a" SpecName="slbmetaserver" specVersion="1.0.51.1" 
+				CloudLayer="SAAS" 
+				SystemLayer="Access"
+				Domain="storage"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="dcd07660-4fee-4e1f-aebf-b98c8d3f2056" SpecName="bocgw" specVersion="1.0.15.4" 
+				CloudLayer="SAAS" 
+				SystemLayer="Access"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Support">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+		
+		<Target TargetUID="c17131c2-0010-4049-a6de-d977f318bcc7" SpecName="nginxboss4d" specVersion="0.0.11" 
+				CloudLayer="SAAS" 
+				SystemLayer="Presentation"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="a1353671-3be6-4a6a-9034-fc266977f87f" SpecName="boss4pc" specVersion="1.0.37.4"
+				CloudLayer="SAAS" 
+				SystemLayer="Presentation"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="0b08a5c0-7374-46ae-9e18-fd16f80b7ac6" SpecName="boss4mobile" specVersion="1.0.42.3" 
+				CloudLayer="SAAS"
+				SystemLayer="Presentation"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="6dab49f8-6328-4a0e-bf39-374e32d331f3" SpecName="appcenter" specVersion="1.0.14.5" 
+				CloudLayer="SAAS" 
+				SystemLayer="Presentation"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="53336691-bd46-4411-819a-790f4a1d0b58" SpecName="appcenterservice" specVersion="1.0.46.3" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="6c9b8c1f-8ca0-4226-b2e8-ba46973d775d" SpecName="location" specVersion="1.0.169.1" 
+				CloudLayer="SAAS"
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="772472eb-b124-48a9-8205-6635725ea7e0" SpecName="saassettingservice" specVersion="1.0.36.2" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="storage"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="1f083ac0-d071-41cf-b9fd-f14baab69bea" SpecName="webcontentservice" specVersion="1.0.48.1" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="6b470df0-9f6a-4da8-8f5e-17de26b1101f" SpecName="imageservice" specVersion="1.0.271.10"
+				CloudLayer="SAAS"
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="65d1c2f2-c6f5-4adb-ac40-83062962bbf2" SpecName="docservice" specVersion="1.0.226.7" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+
+		<Target TargetUID="858770a1-f9a3-47e1-8b98-830d22e29e78" SpecName="asset" specVersion="1.0.61.2" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+
+		<Target TargetUID="b3613934-d592-419c-8d5b-1c1c2b207f41" SpecName="invitation" specVersion="1.0.45.2" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="a983a1d3-def0-42ac-8d95-6f27fa3df5bf" SpecName="contact" specVersion="1.0.291.3"
+				CloudLayer="SAAS"
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="5e868659-c7ba-485a-94eb-7ece6bfbf77c" SpecName="notifyservice" specVersion="1.0.46.1" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="c5d0f63f-596d-41c3-aba8-f0d821540a97" SpecName="party" specVersion="1.0.11.1" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="78c756e5-ecce-43ba-9b09-1ff825a10d85" SpecName="privchat" specVersion="1.0.84.1" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="6e276847-e777-4860-8fe1-e381bf7ebdeb" SpecName="servshell" specVersion="1.0.290.5" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="40309b26-9595-4606-aefc-eb7ed5bb2d8c" SpecName="sysadmin" specVersion="1.0.306.75" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="39a14095-38ab-4712-82a4-b1c0011d9545" SpecName="topic" specVersion="1.0.1302.2" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type="" 
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="0af11771-589b-4e84-b1ad-64795a16ec46" SpecName="useraccount" specVersion="1.0.35.2" 
+				CloudLayer="SAAS" 
+				SystemLayer="BusinessLogic"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type=""
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+		<Target TargetUID="36cde607-f5b8-40cf-bea4-25bd99ae97cc" SpecName="tomcat" specVersion="6.0.38" 
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type=""
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="55f9c7fa-4a46-4392-b731-15551521fac7" SpecName="jetty" specVersion="9.2.6"
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type=""
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="b7d291c2-18e8-4d23-bc11-9cc30350924d" SpecName="commonlib" specVersion="1.0.31.27" 
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type=""
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="b6d8c089-506d-4a81-8277-62bc6543c56f" SpecName="magimajetty" specVersion="1.0.31.14" 
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type=""
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+		<Target TargetUID="f996720f-4efa-44b8-b9c1-f4a7ddd59dfc" SpecName="bocgw" specVersion="1.0.15.4" 
+				CloudLayer="PAAS" 
+				SystemLayer="Persistence"
+				Domain="computing"
+				ArtifactType="AttributeEntity"
+				Plane="Production">
+				
+				<!--Designer需要根据部署约束，结合 Role 映射,及Role约束进行各个映射层次的约束检查-->
+				<TargetDeployConstrain>
+					<EnvResourceConstrain>
+						<Hardware>
+							<CPU Type="x64" CpuNumber="1" MinSpeed="1.5G"></CPU>
+							<Memory MinSize="1000MB" MaxSize="2000MB"></Memory>
+							<Disk Type="localDisk" MinSize="40GB" MaxSize="250GB"></Disk>
+							<EthernetIF IfNumber="2" BandWidth="1000Mbps" HasPublicIP="true"></EthernetIF>
+						</Hardware>
+						<Software>
+							<OS Type="linux" SpecName="CentOS" MinVersion="6.5" MaxVersion="6.5">
+								<FileSystem type="Extfs4" ></FileSystem>
+							</OS>
+							<Runtimes>
+								<Runtime Type="RT_jdk" SpecName="openjdk-1.7.0_65" MinVersion="1.7" MaxVersion="1.7"></Runtime>
+							</Runtimes>
+							<Utilities>
+								<Utility SpecName="" MinVersion="" MaxVersion=""></Utility>
+							</Utilities>
+							<Container Language="" Type=""
+											SpecName="" MinVersion="" MaxVersion="">
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+								<ContainerPart SpecName="" MinVersion="" MaxVersion=""></ContainerPart>
+							</Container>
+							<PrivateDependencies>
+								<DependencyPart SpecName="" MinVersion="" MaxVersion=""></DependencyPart>
+							</PrivateDependencies>
+							<CommunicationResource>
+								<Ports>[2888,3888,2181]</Ports>
+							</CommunicationResource>
+						</Software>
+					</EnvResourceConstrain>
+				</TargetDeployConstrain>
+				<TargetProvider SpecName="" ProviderUUID="" Version="" CloudLayer="" Demension=""></TargetProvider>
+		</Target>
+
+	</Targets>
+</DeployDesign>
+

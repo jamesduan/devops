@@ -1,0 +1,194 @@
+#!/usr/bin/env python
+# encoding:utf8
+
+import sys, os
+import tempfile
+
+from OrchestratorConfig import PYTHON_DEVEL_PATH
+
+try:
+
+	from ishell.console import Console
+	from ishell.command import Command
+
+except ImportError, e:
+
+	print "warning: your system havn't install ishell. you \
+		could need to install python-devel library."
+	if os.system('rpm -ivh ' + PYTHON_DEVEL_PATH) != 0:
+		print "install error, please contact administrator."
+		sys.exit(1)
+	install_extra_pkg()
+
+# test mako lib
+import mako
+
+from OrchestratorConsole import OrchestratorConsole
+
+welcom_message = '''
+>>>>>>>>> welcom to Orchestrator console. <<<<<<<<<<
+
+>>>>>>>>> NOTE: please init your global user and password before your work. <<<<<<<<<<
+'''
+print welcom_message
+
+console = Console(prompt="[orchestrator@devops ]", prompt_delim="$")
+orchestratorConsole = OrchestratorConsole()
+
+warning_msg = "install error, please contact administrator."
+
+def fetch_pkg_name():
+	pass
+
+def install_extra_pkg():
+	# ishell 
+	#tmpdir = tempfile.mkdtemp()
+	
+	if os.system('sudo python ../lib/readline-6.2.4.1/setup.py install') != 0:
+		print warning_msg
+		sys.exit(1)
+
+	if os.system('sudo python ../lib/ishell-0.1.0/setup.py install') != 0:
+		print warning_msg
+		sys.exit(1)
+	
+
+class DeployCommand(Command):
+	
+	def args(self):
+		return None
+
+	def run(self, line):
+
+		cmd_list = line.split()
+		cmd_length = len(cmd_list)
+
+		#schema_name = line.split()[-1]
+		if cmd_length > 3:
+			print "your cmd is to long."
+			return
+		elif cmd_length == 3:
+			deploy_schema_name = line.split()[-1]
+			orchestratorConsole.doDeploy(deploy_schema_name)
+		else:
+			print "Cmd is too short."
+
+class InstallCommand(Command):
+	
+	def args(self):
+		return None
+
+	def run(self, line):
+
+		cmd_list = line.split()
+		cmd_length = len(cmd_list)
+
+		#schema_name = line.split()[-1]
+		if cmd_length > 3:
+			print "your cmd is to long."
+			return
+		elif cmd_length == 3:
+			cloud_layer = line.split()[-1]
+			orchestratorConsole.install(cloud_layer)
+		else:
+			print "Cmd is too short."
+
+class UpdateWar(Command):
+
+	def args(self, war_name):
+		return war_name
+	
+	def run(self, line):
+		war_name = line.split()[-1]
+		orchestratorConsole.update_jetty_war(war_name)
+
+class ListTarget(Command):
+	
+	def run(self, line):
+		orchestratorConsole.listTargets()
+
+class ListRole(Command):
+	
+	def run(self, line):
+		orchestratorConsole.listRoles()
+
+class ListEnvResource(Command):
+	
+	def run(self, line):
+		orchestratorConsole.listEnvResources()
+
+class ListDeploySchema(Command):
+	
+	def run(self, line):
+		orchestratorConsole.listDeploySchema()
+	
+class ListContainer(Command):
+	
+	def run(self, line):
+		orchestratorConsole.listContainers()
+
+
+class PasswordSetter(Command):
+	
+	def run(self, line):
+		orchestratorConsole.setPassword()
+
+class ShowUserCmd(Command):
+	
+	def args(self):
+		return ['online', 'offline']
+
+	def run(self, line):
+		cmd_list = line.split()
+		cmd_length = len(cmd_list)
+		#print cmd_length
+
+		if cmd_length > 2:
+			print "your cmd is to long."
+
+		if cmd_length == 2:
+			print "exec deploy."
+
+class CleanAll(Command):
+	
+	def run(self, line):
+		orchestratorConsole.clean()
+
+
+## father command.
+orchestratorCmd = Command('baton', help='the first command for orchestrator console.')
+
+cleanallcmd = CleanAll('clean', help='clean all datas.')
+showuserCmd = ShowUserCmd('show', help='show users', dynamic_args=True)
+
+installCmd = InstallCommand('install', help='install each cloud layer')
+
+# define cmd object
+list_resource_cmd = ListEnvResource("list_resource", help="list resources from cmdb metadata.")
+update_war_cmd = UpdateWar("update_war", help="update war to remote servers")
+deploy_cmds = DeployCommand("deploy", help="deploye schema. it's one key setup action.can deploy all app to target host.", dynamic_args=True)
+list_target_cmd = ListTarget('list_target', help="list target list from cmdb metadata.")
+list_role_cmd = ListRole('list_role', help="list roles from cmdb metadata.")
+list_deploy_schema_cmd = ListDeploySchema('list_deploy_schema', help="list deploy schema")
+list_container_cmd = ListContainer('list_container', help='list containers.')
+passwordSetterCmd = PasswordSetter('setpass', help="set password for user, for example: user:password")
+
+try:
+
+	# add child process to console
+	console.addChild(orchestratorCmd).addChild(showuserCmd)
+	console.addChild(orchestratorCmd).addChild(cleanallcmd)
+	console.addChild(orchestratorCmd).addChild(list_container_cmd)
+	console.addChild(orchestratorCmd).addChild(list_resource_cmd)
+	console.addChild(orchestratorCmd).addChild(list_role_cmd)
+	console.addChild(orchestratorCmd).addChild(list_target_cmd)
+	console.addChild(orchestratorCmd).addChild(update_war_cmd)
+	console.addChild(orchestratorCmd).addChild(deploy_cmds)
+	console.addChild(orchestratorCmd).addChild(list_deploy_schema_cmd)
+	console.addChild(orchestratorCmd).addChild(installCmd)
+	console.addChild(orchestratorCmd).addChild(passwordSetterCmd)
+	console.loop()
+
+except KeyboardInterrupt,e:
+	print >> sys.stderr, "\n\nExiting on user cancel."
+

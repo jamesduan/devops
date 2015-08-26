@@ -1,0 +1,55 @@
+﻿<DeployDesign>
+	<DesignMeta>
+		<Author></Author>
+		<Datetime></Datetime>
+		<Version></Version>
+	</DesignMeta>
+
+	<TargetToRoleMapping>
+		<!--Target 和 Role 的约束检查可以由专门的合法性工具来检查，可能和Designer是分离的或作为可选命令-->
+		<MappingItem MappingItemUID="fb05e4bc-8cd9-43a1-b129-54794fa47691">{faa734d8-11a6-4b4b-b5ab-f15b07c87129}:{5aede9b6-d77a-43ad-be13-5479c40c1763}</MappingItem>
+		<MappingItem MappingItemUID="ac3d0244-01fa-4953-95e1-a82376d2b15b">{d0f67793-c9f0-4824-bd0b-9c5dad4f3e4f}:{e1a3d410-50fe-4886-b8aa-1e54cb5d3f59}</MappingItem>
+		<MappingItem MappingItemUID="ed743977-60ae-477d-ac06-f3c28bf2980a">{d0f67793-c9f0-4824-bd0b-9c5dad4f3e4f}:{66136a4b-a95b-4085-a1b9-0bf72de4be17}</MappingItem>
+		<MappingItem MappingItemUID="3b456202-f8fa-435b-b50d-44f89999f9b7">{b73051cd-ec84-490d-8d14-ef5f8c9e302c}:{e22979b4-89e3-4b38-9267-f0040d017ad8}</MappingItem>
+		<MappingItem MappingItemUID="000ad119-bf67-48e4-888c-5f88bab68ede">{b73051cd-ec84-490d-8d14-ef5f8c9e302c}:{7a4aef85-f2b9-4869-adc7-6bdbce8303e7}</MappingItem>
+		<MappingItem MappingItemUID="225490d1-8670-4ea3-8196-594fdad941d1">{837e13cc-8f98-4cbd-8cae-f113340524a7}:{bfe9bd78-18c6-4f7b-9918-cbca56dd36e6}</MappingItem>
+		<MappingItem MappingItemUID="96373045-f518-444b-8039-a0ad00155fff">{5f67833e-a24e-418c-a349-57c6b279e7d7}:{35bd2a8e-0786-4d3c-b3ee-15e54505b26a}</MappingItem>
+		<MappingItem MappingItemUID="5e35630a-8731-4dca-95bc-b1101b83b77c">{4ae45680-0332-4ed9-a3fd-58859ffff4d7}:{35bd2a8e-0786-4d3c-b3ee-15e54505b26a}</MappingItem>
+		<MappingItem MappingItemUID="fad09a99-3f3f-418e-bbec-af547a015fec">{aec6b425-de39-4335-be9e-a6582ebbe6d3}:{35bd2a8e-0786-4d3c-b3ee-15e54505b26a}</MappingItem>
+		<MappingItem MappingItemUID="71a3ebf0-88ac-4bf9-96bc-0ab264092e37">{dcbf674c-21e9-492f-b24a-2a78284bea4c}:{89cb5632-639e-4dc8-a11e-e3e5ed2ac059}</MappingItem>
+		<MappingItem MappingItemUID="e732fab5-903f-46a2-9507-ae9371ba5f83">{ee3a68eb-42cd-4c44-ad8a-6e04db921c24}:{89cb5632-639e-4dc8-a11e-e3e5ed2ac059}</MappingItem>
+		<MappingItem MappingItemUID="9528e524-1b9c-4e13-b58a-78539d449d52">{100ae676-a842-46d0-9713-093e4b333839}:{16fa6d16-8812-4130-ad98-aa254de1f797}</MappingItem>
+		<MappingItem MappingItemUID="95db3470-8801-43bf-913e-122c55a2b54c">{dcbf674c-21e9-492f-b24a-2a78284bea4c}:{16fa6d16-8812-4130-ad98-aa254de1f797}</MappingItem>
+		<MappingItem MappingItemUID="23d60346-de29-43d3-8358-23172f7ddf11">{c43b39fa-25e9-43f7-ac8c-fabd80562ba3}:{cce754ab-1de6-43c1-93c3-4723a19e0354}</MappingItem>
+		<MappingItem MappingItemUID="a85dfb95-dc31-482c-9d5d-499da91cfd4a">{aa34575a-cc5c-4cdb-9b75-24c6de6a6c0a}:{cce754ab-1de6-43c1-93c3-4723a19e0354}</MappingItem>
+		<MappingItem MappingItemUID="cc977406-bcf9-4cc7-a050-3176995e0f4e">{c17131c2-0010-4049-a6de-d977f318bcc7}:{99794352-2103-4035-bcbd-24eb24147220}</MappingItem>
+		<MappingItem MappingItemUID="acf837cd-3c2c-45bb-afc1-6edb148bb676">{a1353671-3be6-4a6a-9034-fc266977f87f}:{99794352-2103-4035-bcbd-24eb24147220}</MappingItem>
+		<MappingItem MappingItemUID="88c3b5a2-8c85-4774-a865-3c0a24231884">{0b08a5c0-7374-46ae-9e18-fd16f80b7ac6}:{99794352-2103-4035-bcbd-24eb24147220}</MappingItem>
+		<MappingItem MappingItemUID="897092da-6d6f-4487-b069-bbe357565412">{6dab49f8-6328-4a0e-bf39-374e32d331f3}:{99794352-2103-4035-bcbd-24eb24147220}</MappingItem>
+		<MappingItem MappingItemUID="4a04fcdb-f7ab-4aad-ac16-e6fa70538d90">{53336691-bd46-4411-819a-790f4a1d0b58}:{07701b57-ea42-4045-97aa-317202ac908a}</MappingItem>
+		<MappingItem MappingItemUID="0c23aadb-63c9-4e85-a0b9-2839c82c997f">{6c9b8c1f-8ca0-4226-b2e8-ba46973d775d}:{07701b57-ea42-4045-97aa-317202ac908a}</MappingItem>
+		<MappingItem MappingItemUID="adf429b1-39ca-4252-a538-499124a52346">{772472eb-b124-48a9-8205-6635725ea7e0}:{07701b57-ea42-4045-97aa-317202ac908a}</MappingItem>
+		<MappingItem MappingItemUID="603c4cc7-2a81-469b-90f4-849e8f212d45">{1f083ac0-d071-41cf-b9fd-f14baab69bea}:{07701b57-ea42-4045-97aa-317202ac908a}</MappingItem>
+		<MappingItem MappingItemUID="c3cb36a8-bfdf-4222-b00e-4f528fa43877">{858770a1-f9a3-47e1-8b98-830d22e29e78}:{1a878a41-7c98-4a9b-87a3-7c35c675fcfd}</MappingItem>
+		<MappingItem MappingItemUID="4fb5c730-b6ad-4c67-9cf8-483b8c8cd087">{b3613934-d592-419c-8d5b-1c1c2b207f41}:{1a878a41-7c98-4a9b-87a3-7c35c675fcfd}</MappingItem>
+		<MappingItem MappingItemUID="aab0a1cd-6502-4564-a067-e73f1c266375">{6b470df0-9f6a-4da8-8f5e-17de26b1101f}:{ca718c94-0888-47eb-9a4d-03d72cfce441}</MappingItem>
+		<MappingItem MappingItemUID="d81462ee-14ef-4c58-b41d-7c7ae51d84c9">{65d1c2f2-c6f5-4adb-ac40-83062962bbf2}:{ca718c94-0888-47eb-9a4d-03d72cfce441}</MappingItem>
+		<MappingItem MappingItemUID="7b7512eb-36dc-47cf-9b72-b2909ab2db33">{a983a1d3-def0-42ac-8d95-6f27fa3df5bf}:{65f9048d-212f-437f-a992-47aa6d7b0ba0}</MappingItem>
+		<MappingItem MappingItemUID="efb537d0-15b5-4e34-bbe5-658b540d0be4">{5e868659-c7ba-485a-94eb-7ece6bfbf77c}:{65f9048d-212f-437f-a992-47aa6d7b0ba0}</MappingItem>
+		<MappingItem MappingItemUID="52337b90-e6ee-4293-a81c-4b0cbfdab2b2">{c5d0f63f-596d-41c3-aba8-f0d821540a97}:{65f9048d-212f-437f-a992-47aa6d7b0ba0}</MappingItem>
+		<MappingItem MappingItemUID="cb031708-b838-4b95-97e6-6e8d80fd7381">{78c756e5-ecce-43ba-9b09-1ff825a10d85}:{65f9048d-212f-437f-a992-47aa6d7b0ba0}</MappingItem>
+		<MappingItem MappingItemUID="39462113-b300-4603-9fb2-2aef1ecaabf4">{6e276847-e777-4860-8fe1-e381bf7ebdeb}:{65f9048d-212f-437f-a992-47aa6d7b0ba0}</MappingItem>
+		<MappingItem MappingItemUID="f459012b-1888-4546-825a-2eb5077f3ef6">{40309b26-9595-4606-aefc-eb7ed5bb2d8c}:{65f9048d-212f-437f-a992-47aa6d7b0ba0}</MappingItem>
+		<MappingItem MappingItemUID="203ca6af-744a-4aee-b0f5-fc445f42d7c3">{39a14095-38ab-4712-82a4-b1c0011d9545}:{65f9048d-212f-437f-a992-47aa6d7b0ba0}</MappingItem>
+		<MappingItem MappingItemUID="ef350a65-fb20-4a11-9861-d59439e20dd6">{0af11771-589b-4e84-b1ad-64795a16ec46}:{65f9048d-212f-437f-a992-47aa6d7b0ba0}</MappingItem>
+		
+		<MappingItem MappingItemUID="48c7aff8-5798-4520-bae6-a515babae1aa">{36cde607-f5b8-40cf-bea4-25bd99ae97cc}:{e6f51ecd-713d-42cd-a681-371c6ee8213d}</MappingItem>
+		<MappingItem MappingItemUID="eae13841-436b-4c7d-b3df-a0dd0ad77867">{b7d291c2-18e8-4d23-bc11-9cc30350924d}:{e6f51ecd-713d-42cd-a681-371c6ee8213d}</MappingItem>
+
+		<MappingItem MappingItemUID="91ec00ac-0394-4125-8de7-ab97d3be5bd6">{55f9c7fa-4a46-4392-b731-15551521fac7}:{67d38d20-5301-476b-86e2-e9d292c185c1}</MappingItem>
+		<MappingItem MappingItemUID="5b8e5159-2aad-4bf2-969a-c7161151defb">{b7d291c2-18e8-4d23-bc11-9cc30350924d}:{67d38d20-5301-476b-86e2-e9d292c185c1}</MappingItem>
+		<MappingItem MappingItemUID="e561fda0-62a8-4101-8111-6e1be2dfba37">{b6d8c089-506d-4a81-8277-62bc6543c56f}:{67d38d20-5301-476b-86e2-e9d292c185c1}</MappingItem>
+		<MappingItem MappingItemUID="e006f6ef-a473-4e62-8071-aecd9bae5fab">{f996720f-4efa-44b8-b9c1-f4a7ddd59dfc}:{9dcfd47e-d93d-44ed-b47c-d7f4ad883cd0}</MappingItem>
+	</TargetToRoleMapping>
+</DeployDesign>
+

@@ -1,0 +1,9 @@
+$TTL 1D
+@	IN SOA	@ node1004. (
+					0	; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+	NS	@
+	A	10.0.22.5

@@ -1,0 +1,23 @@
+dependencies:
+
+ - group:com.magima.iaas
+   desc: database replication maintainer
+   id: 64d094df-72b7-4f80-ab19-a465abab47a8
+   version: 1.0
+   classifier: dev
+   type:
+
+ - group:com.magima.iaas
+   desc: init businesse data
+   id: cf0d4857-14ed-4397-a749-931dfb0f2169
+   version: 1.0
+   classifier: dev
+   type:
+
+ - group:com.magima.iaas
+   desc: apigw_luascript_changer
+   id: 0e7fa4ca-2639-41c5-9c02-3169ca40e23e
+   version: 1.0
+   classifier: dev
+   type:
+

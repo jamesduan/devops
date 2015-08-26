@@ -1,0 +1,91 @@
+﻿<DeployDesign>
+
+	<DesignMeta>
+		<Author></Author>
+		<Datetime></Datetime>
+		<Version></Version>
+	</DesignMeta>
+
+	<RoleToDeviceMapping >
+
+		<!--
+		1,映射分为三种类型：
+			temperary： 临时映射，一到过期时间即回收资源
+			Dynamic：动态映射，没有过期时间，但允许调整改变或删除
+			Permanent：永久映射，没有过期时间，不允许调整改变，只能被删除
+			
+		2,设计器在生成每个映射项时，负责对Role映射的约束合法性进行检查，包括Role 对 EnvCluster 约束、
+			对OSImage约束、对AppContainer约束、对InfraApplication可访问性依赖约束等的检查
+		-->
+		<!-- {roleUID}:{hostUID}-->
+		<!-- zookeeper -->
+		<MappingItem MappingItemUID="" type="temperary">{5aede9b6-d77a-43ad-be13-5479c40c1763}:{2c7eb9c4-3927-47ed-8b99-476747e01454}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{5aede9b6-d77a-43ad-be13-5479c40c1763}:{46298d9b-b02f-4766-a069-3c236a3bb208}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{5aede9b6-d77a-43ad-be13-5479c40c1763}:{9ed71aa9-7f34-4c9f-a1ec-8d110c740253}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{5aede9b6-d77a-43ad-be13-5479c40c1763}:{655c964b-e1c3-4842-b3ac-7bf90e262f1e}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{5aede9b6-d77a-43ad-be13-5479c40c1763}:{549122a2-7e7c-45ea-b459-2cc602947390}</MappingItem>
+
+		<!-- mysql master and slave -->
+		<MappingItem MappingItemUID="" type="temperary">{e1a3d410-50fe-4886-b8aa-1e54cb5d3f59}:{2c7eb9c4-3927-47ed-8b99-476747e01454}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{66136a4b-a95b-4085-a1b9-0bf72de4be17}:{46298d9b-b02f-4766-a069-3c236a3bb208}</MappingItem>
+
+		<!-- mongo master and slave -->
+		<MappingItem MappingItemUID="" type="temperary">{e22979b4-89e3-4b38-9267-f0040d017ad8}:{9ed71aa9-7f34-4c9f-a1ec-8d110c740253}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{7a4aef85-f2b9-4869-adc7-6bdbce8303e7}:{655c964b-e1c3-4842-b3ac-7bf90e262f1e}</MappingItem>
+
+		<!-- TFS -->
+		<MappingItem MappingItemUID="" type="temperary">{bfe9bd78-18c6-4f7b-9918-cbca56dd36e6}:{9ed71aa9-7f34-4c9f-a1ec-8d110c740253}</MappingItem>
+
+		<!-- persistence normal -->
+		<MappingItem MappingItemUID="" type="temperary">{35bd2a8e-0786-4d3c-b3ee-15e54505b26a}:{2c7eb9c4-3927-47ed-8b99-476747e01454}</MappingItem>
+		<!-- Access_Normal. iobalancer -->
+		<MappingItem MappingItemUID="" type="temperary">{89cb5632-639e-4dc8-a11e-e3e5ed2ac059}:{2c7eb9c4-3927-47ed-8b99-476747e01454}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{89cb5632-639e-4dc8-a11e-e3e5ed2ac059}:{655c964b-e1c3-4842-b3ac-7bf90e262f1e}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{89cb5632-639e-4dc8-a11e-e3e5ed2ac059}:{549122a2-7e7c-45ea-b459-2cc602947390}</MappingItem>
+		<!--Access_Normal_APIGW -->
+		<MappingItem MappingItemUID="" type="temperary">{16fa6d16-8812-4130-ad98-aa254de1f797}:{2c7eb9c4-3927-47ed-8b99-476747e01454}</MappingItem>
+
+		<MappingItem MappingItemUID="" type="temperary">{16fa6d16-8812-4130-ad98-aa254de1f797}:{549122a2-7e7c-45ea-b459-2cc602947390}</MappingItem>
+
+		<!-- Production_Access_Normal_SLBGW -->
+		<MappingItem MappingItemUID="" type="temperary">{cce754ab-1de6-43c1-93c3-4723a19e0354}:{2c7eb9c4-3927-47ed-8b99-476747e01454}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{cce754ab-1de6-43c1-93c3-4723a19e0354}:{549122a2-7e7c-45ea-b459-2cc602947390}</MappingItem>
+		<!-- Production_Presentation_Normal -->
+		<MappingItem MappingItemUID="" type="temperary">{99794352-2103-4035-bcbd-24eb24147220}:{549122a2-7e7c-45ea-b459-2cc602947390}</MappingItem>
+
+		<!-- Production_BusinessLogic_Base -->
+		<MappingItem MappingItemUID="" type="temperary">{07701b57-ea42-4045-97aa-317202ac908a}:{46298d9b-b02f-4766-a069-3c236a3bb208}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{07701b57-ea42-4045-97aa-317202ac908a}:{655c964b-e1c3-4842-b3ac-7bf90e262f1e}</MappingItem>
+		<!--Production_BusinessLogic_Normal_ImageService -->
+		<MappingItem MappingItemUID="" type="temperary">{ca718c94-0888-47eb-9a4d-03d72cfce441}:{9ed71aa9-7f34-4c9f-a1ec-8d110c740253}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{ca718c94-0888-47eb-9a4d-03d72cfce441}:{655c964b-e1c3-4842-b3ac-7bf90e262f1e}</MappingItem>
+	
+		<!-- Production_BusinessLogic_Normal -->
+		<MappingItem MappingItemUID="" type="temperary">{1a878a41-7c98-4a9b-87a3-7c35c675fcfd}:{46298d9b-b02f-4766-a069-3c236a3bb208}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{1a878a41-7c98-4a9b-87a3-7c35c675fcfd}:{655c964b-e1c3-4842-b3ac-7bf90e262f1e}</MappingItem>
+
+		<!-- Production_BusinessLogic_Advanced -->
+		<MappingItem MappingItemUID="" type="temperary">{65f9048d-212f-437f-a992-47aa6d7b0ba0}:{46298d9b-b02f-4766-a069-3c236a3bb208}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{65f9048d-212f-437f-a992-47aa6d7b0ba0}:{655c964b-e1c3-4842-b3ac-7bf90e262f1e}</MappingItem>
+		
+		<!-- Production_Persistence_Normal_Jetty-->
+		<MappingItem MappingItemUID="" type="temperary">{67d38d20-5301-476b-86e2-e9d292c185c1}:{2c7eb9c4-3927-47ed-8b99-476747e01454}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{67d38d20-5301-476b-86e2-e9d292c185c1}:{46298d9b-b02f-4766-a069-3c236a3bb208}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{67d38d20-5301-476b-86e2-e9d292c185c1}:{9ed71aa9-7f34-4c9f-a1ec-8d110c740253}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{67d38d20-5301-476b-86e2-e9d292c185c1}:{655c964b-e1c3-4842-b3ac-7bf90e262f1e}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{67d38d20-5301-476b-86e2-e9d292c185c1}:{549122a2-7e7c-45ea-b459-2cc602947390}</MappingItem>
+
+		<!-- Production_Persistence_Normal_Tomcat -->
+
+
+		<MappingItem MappingItemUID="" type="temperary">{e6f51ecd-713d-42cd-a681-371c6ee8213d}:{46298d9b-b02f-4766-a069-3c236a3bb208}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{e6f51ecd-713d-42cd-a681-371c6ee8213d}:{9ed71aa9-7f34-4c9f-a1ec-8d110c740253}</MappingItem>
+		<MappingItem MappingItemUID="" type="temperary">{e6f51ecd-713d-42cd-a681-371c6ee8213d}:{655c964b-e1c3-4842-b3ac-7bf90e262f1e}</MappingItem>
+
+		<!-- Support_Access_Normal_BocGW -->
+		<MappingItem MappingItemUID="" type="temperary">{9dcfd47e-d93d-44ed-b47c-d7f4ad883cd0}:{549122a2-7e7c-45ea-b459-2cc602947390}</MappingItem>
+
+
+	</RoleToDeviceMapping>
+</DeployDesign>
+

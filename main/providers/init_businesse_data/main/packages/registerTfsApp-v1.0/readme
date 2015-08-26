@@ -1,0 +1,16 @@
+
+#===============added by qw0044=============
+This provioder need ruby and zookeeper.gem for running
+
+So now bb-installer self-installation will setup the running env
+
+If you want to run it with no bb installer env, please install ruby and zookeeper.gem by hand
+
+Any Problems, find 021/044.
+
+# ===== added by qw0044 =====
+
+provided and documented by qw0044! 2014-10-22!
+
+main-entry register_pvo.rb
+

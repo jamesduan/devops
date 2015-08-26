@@ -1,0 +1,428 @@
+<DeployDesign>
+	<DesignMeta>
+		<Author></Author>
+		<Datetime></Datetime>
+		<Version></Version>
+	</DesignMeta>
+
+	<!-- 这里定义Instance层面，非Spec层面 -->
+	<EnvResources>
+		<DataCenter ResourceUID="" name="pqa">
+			<PAAS><!-- 可选，理论上PAAS不属于环境资源，而归入Target范畴 。（另：DAAS 属于PAAS 层的一个子类） -->
+				<PlatformApplications>
+					<PlatformApplication ResourceUID="" name="mysql" version="" endpoint=""></PlatformApplication>
+					<PlatformApplication ResourceUID="" name="Zookeeper" version="" endpoint=""></PlatformApplication>
+					<PlatformApplication ResourceUID="" name="rabbitMQ" version="" endpoint=""></PlatformApplication>
+					<PlatformApplication ResourceUID="" name="MailService" version="" endpoint=""></PlatformApplication>
+				</PlatformApplications>
+				<ThirdPlatformApplications>
+					<ThirdPlatformApplication ResourceUID="" name="SinaMiroBlog" version="1.0" endpoint="http://xx" serviceProvider="sina"></ThirdPlatformApplication>
+				</ThirdPlatformApplications>
+			</PAAS>
+			<IAAS>
+				<Networks>
+					<!--public 类型的网络，属于电信公网，电信公司会给出固定公网IP、公网网关-->
+					<Network ResourceUID="" name="" gateway="" mask="" type="public | private" DCUID=""></Network>
+				</Networks>
+				<Devices>
+					<Switchs ResourceUID="" name="" isVirtual="false">
+						<Switch ResourceUID="" name="" isVirtual="false">
+							<WLANRef>network_uid:xxx</WLANRef><!--双线情况下某些交换机可能有多个Wlan -->
+							<LANRef>network_uid:xxx</LANRef>
+							<LANRef>network_uid:xxx</LANRef>
+						</Switch>
+					</Switchs>
+					<Routers ResourceUID="" name="" bindSwitch="switch_uid" isVirtual="false"></Routers>
+					<Hosts>
+						<Host ResourceUID="2c7eb9c4-3927-47ed-8b99-476747e01454" name="pqa01" isVirtual="true">
+							<Hardware>
+								<CPU ResourceUID="49b470ab-d7f0-4087-a6fe-d086c726e3e4" cpuNumber="4" speed="2.3GHZ"></CPU>
+								<Memory ResourceUID="395e6ce2-7d57-4710-bea8-26f7947c8466" memSize="4000MB"></Memory>
+								<Disk ResourceUID="e471d1d5-73a7-4427-b92b-e769823c9155" type="STAT" name="" mount="/var/magima" diskSize="250GB"></Disk>
+								<EthernetIF ResourceUID="d8dc2a7e-d8cb-4691-92c3-f98bc2bb3b62" mac="" bindPrivateIP="10.0.22.2" bindPublicIP="10.0.0.130" bandWidth="1000Mb"></EthernetIF>
+								<EthernetIF ResourceUID="8f5488bf-0d4b-40eb-8bd0-8a33879f29af" mac="" bindPrivateIP="10.0.20.1" bindPublicIP="" bandWidth="1000Mb"></EthernetIF>
+							</Hardware>
+
+							<Software>
+								<OS>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</OS>
+								<Runtimes>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Runtimes>
+								<Containers>
+									<ResourceRef>{9b553d55-8f24-4cd0-86d2-00a15cb4d693}</ResourceRef>
+									<ResourceRef>{758865ea-5707-4abc-8eb4-cb9880800c89}</ResourceRef>
+									<ResourceRef>{7d720a2d-f68f-4804-bec2-dc78c08e2b56}</ResourceRef>
+									<ResourceRef>{f8b66aae-6868-4b62-9126-ea7511ca7c69}</ResourceRef>
+									<ResourceRef>{fb74fc3f-f549-439b-b43f-b05a7c6f06b1}</ResourceRef>
+									<ResourceRef>{005fa157-fb0e-4003-b62b-5b42f7f143d4}</ResourceRef>
+									<ResourceRef>{6d1087d3-705a-496b-9fb9-122d0e7cfad4}</ResourceRef>
+								</Containers>
+								<Utilities>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Utilities>
+							</Software>
+						</Host>
+						
+						<Host ResourceUID="46298d9b-b02f-4766-a069-3c236a3bb208" name="pqa02" isVirtual="true">
+							<Hardware>
+								<CPU ResourceUID="9f58830b-8994-4a23-8922-27534d42f679" cpuNumber="4" speed="2.3GHZ"></CPU>
+								<Memory ResourceUID="868ee020-b13c-49e8-9509-27fd79c8834e" memSize="4000MB"></Memory>
+								<Disk ResourceUID="1c80bb90-bfd6-4266-a978-50c6fc1a7673" type="STAT" name="" mount="/var/magima" diskSize="250GB"></Disk>
+								<EthernetIF ResourceUID="20308511-d8e6-41d6-b69d-1b4bed66407d" mac="" bindPrivateIP="10.0.22.3" bindPublicIP="10.0.0.131" bandWidth="1000Mb"></EthernetIF>
+								<EthernetIF ResourceUID="d60baf7e-2b4c-44e3-8583-7c3cc81241f3" mac="" bindPrivateIP="10.0.20.3" bindPublicIP="" bandWidth="1000Mb"></EthernetIF>
+							</Hardware>
+							<Software>
+								<OS>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</OS>
+								<Runtimes>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Runtimes>
+								<Containers>
+
+									<ResourceRef>{30cf2dac-57bf-4d94-9570-0d17c8d537cf}</ResourceRef>
+									<ResourceRef>{0e0d6c44-f5ae-4dbe-a77c-c9db2b1c480e}</ResourceRef>
+									<ResourceRef>{53ba361b-5d26-4894-a8a2-11355ab2699e}</ResourceRef>
+									<ResourceRef>{ec8e985c-0e02-4569-8b6f-bd1744ae2df6}</ResourceRef>
+									<ResourceRef>{b4870d9c-d694-451b-8ceb-3d1502b77232}</ResourceRef>
+									<ResourceRef>{d0cf26e6-1072-4a14-9e94-b35f53c201a8}</ResourceRef>
+									<ResourceRef>{1f4c524a-17c5-4bde-b233-f22e183e950f}</ResourceRef>
+									<ResourceRef>{0fa819f4-4371-46a9-bbbe-603e65ad0bac}</ResourceRef>
+									<ResourceRef>{ed29a41d-efa3-4127-ba3d-95a916baa9e6}</ResourceRef>
+									<ResourceRef>{e31cc492-ddff-458a-acb2-165973346471}</ResourceRef>
+									<ResourceRef>{9b7ce70b-0d6c-420d-b1cd-92bfe676cf07}</ResourceRef>
+									<ResourceRef>{7fcd6371-9fe7-480d-a847-fe0c4351c151}</ResourceRef>
+									<ResourceRef>{5ae26e9d-b5ae-4620-94bd-706d8e226235}</ResourceRef>
+									<ResourceRef>{280f5ca9-4822-4e4c-8089-d087254c5340}</ResourceRef>
+									<ResourceRef>{aa4c47c4-cabd-4703-a6ea-e277303f8feb}</ResourceRef>
+									<ResourceRef>{fe32a3fb-6f5d-4ba4-b424-57c1e501ffb3}</ResourceRef>
+									<ResourceRef>{fea291ad-0dd9-486b-bdc6-e5faf710c804}</ResourceRef>
+
+								</Containers>
+								<Utilities>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Utilities>
+							</Software>
+						</Host>
+
+						<Host ResourceUID="9ed71aa9-7f34-4c9f-a1ec-8d110c740253" name="pqa03" isVirtual="true">
+							<Hardware>
+								<CPU ResourceUID="" cpuNumber="4" speed="2.3GHZ"></CPU>
+								<Memory ResourceUID="" memSize="4000MB"></Memory>
+								<Disk ResourceUID="" type="STAT" name="" mount="/var/magima" diskSize="250GB"></Disk>
+								<EthernetIF ResourceUID="dabbc70d-1ac1-4160-a53e-f24d6af15ab4" mac="" bindPrivateIP="10.0.22.4" bindPublicIP="10.0.0.132" bandWidth="1000Mb"></EthernetIF>
+								<EthernetIF ResourceUID="104b282a-1ae7-462b-a07c-5e8690087e4b" mac="" bindPrivateIP="10.0.20.4" bindPublicIP="" bandWidth="1000Mb"></EthernetIF>
+							</Hardware>
+							<Software>
+								<OS>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</OS>
+								<Runtimes>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Runtimes>
+								<Containers>
+
+									<ResourceRef>{669702f3-a129-4f95-b78d-e140f7579392}</ResourceRef>
+									<ResourceRef>{2a831382-fe66-42ef-acd0-7883cd806edf}</ResourceRef>
+									<ResourceRef>{b2660c26-3d6b-42dc-abc7-c6fb782f8c61}</ResourceRef>
+									<ResourceRef>{aab64964-00c0-4535-8cd3-e418ce801d5d}</ResourceRef>
+									<ResourceRef>{78807080-eadc-4ba6-bdc0-db91b9b58dd1}</ResourceRef>
+									<ResourceRef>{008db8c8-6803-4109-be20-8b943b629326}</ResourceRef>
+									<ResourceRef>{c4de8a08-841b-4138-aaeb-0cb35463a217}</ResourceRef>
+									<ResourceRef>{0d7bc2a3-4813-4255-8d2a-b0ba54bb5a81}</ResourceRef>
+									<ResourceRef>{ecc5efb2-3043-4d07-9e6a-a5fd4e45043f}</ResourceRef>
+									<ResourceRef>{afcdc752-b8fe-4ce0-876d-6d79b72df1cb}</ResourceRef>
+									<ResourceRef>{11b9cb73-5331-4d8d-a657-18b91956dabf}</ResourceRef>
+
+								</Containers>
+								<Utilities>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Utilities>
+							</Software>
+						</Host>
+
+						<Host ResourceUID="655c964b-e1c3-4842-b3ac-7bf90e262f1e" name="pqa04" isVirtual="true">
+							<Hardware>
+								<CPU ResourceUID="9f58830b-8994-4a23-8922-27534d42f679" cpuNumber="4" speed="2.3GHZ"></CPU>
+								<Memory ResourceUID="868ee020-b13c-49e8-9509-27fd79c8834e" memSize="4000MB"></Memory>
+								<Disk ResourceUID="1c80bb90-bfd6-4266-a978-50c6fc1a7673" type="STAT" name="" mount="/var/magima" diskSize="250GB"></Disk>
+								<EthernetIF ResourceUID="20308511-d8e6-41d6-b69d-1b4bed66407d" mac="" bindPrivateIP="10.0.22.5" bindPublicIP="10.0.0.134" bandWidth="1000Mb"></EthernetIF>
+								<EthernetIF ResourceUID="d60baf7e-2b4c-44e3-8583-7c3cc81241f3" mac="" bindPrivateIP="10.0.20.5" bindPublicIP="" bandWidth="1000Mb"></EthernetIF>
+							</Hardware>
+							<Software>
+								<OS>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</OS>
+								<Runtimes>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Runtimes>
+								<Containers>
+									<ResourceRef></ResourceRef>
+									<ResourceRef></ResourceRef>
+									<ResourceRef></ResourceRef>
+								</Containers>
+								<Utilities>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Utilities>
+							</Software>
+						</Host>
+
+						<Host ResourceUID="549122a2-7e7c-45ea-b459-2cc602947390" name="pqa05" isVirtual="true">
+							<Hardware>
+								<CPU ResourceUID="9f58830b-8994-4a23-8922-27534d42f679" cpuNumber="4" speed="2.3GHZ"></CPU>
+								<Memory ResourceUID="868ee020-b13c-49e8-9509-27fd79c8834e" memSize="4000MB"></Memory>
+								<Disk ResourceUID="1c80bb90-bfd6-4266-a978-50c6fc1a7673" type="STAT" name="" mount="/var/magima" diskSize="250GB"></Disk>
+								<EthernetIF ResourceUID="20308511-d8e6-41d6-b69d-1b4bed66407d" mac="" bindPrivateIP="10.0.22.6" bindPublicIP="10.0.0.141" bandWidth="1000Mb"></EthernetIF>
+								<EthernetIF ResourceUID="d60baf7e-2b4c-44e3-8583-7c3cc81241f3" mac="" bindPrivateIP="10.0.20.6" bindPublicIP="" bandWidth="1000Mb"></EthernetIF>
+							</Hardware>
+							<Software>
+								<OS>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</OS>
+								<Runtimes>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Runtimes>
+								<Containers>
+									<ResourceRef></ResourceRef>
+									<ResourceRef></ResourceRef>
+									<ResourceRef></ResourceRef>
+								</Containers>
+								<Utilities>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Utilities>
+							</Software>
+						</Host>
+
+						<Host ResourceUID="2a6038e3-0876-434c-87b1-2b8a93bd462f" name="pqa_opsserver" isVirtual="true">
+							<Hardware>
+								<CPU ResourceUID="9f58830b-8994-4a23-8922-27534d42f679" cpuNumber="4" speed="2.3GHZ"></CPU>
+								<Memory ResourceUID="868ee020-b13c-49e8-9509-27fd79c8834e" memSize="4000MB"></Memory>
+								<Disk ResourceUID="1c80bb90-bfd6-4266-a978-50c6fc1a7673" type="STAT" name="" mount="/var/magima" diskSize="250GB"></Disk>
+								<EthernetIF ResourceUID="20308511-d8e6-41d6-b69d-1b4bed66407d" mac="" bindPrivateIP="10.0.22.7" bindPublicIP="10.0.0.142" bandWidth="1000Mb"></EthernetIF>
+								<EthernetIF ResourceUID="d60baf7e-2b4c-44e3-8583-7c3cc81241f3" mac="" bindPrivateIP="10.0.20.7" bindPublicIP="" bandWidth="1000Mb"></EthernetIF>
+							</Hardware>
+							<Software>
+								<OS>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</OS>
+								<Runtimes>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Runtimes>
+								<Containers>
+									<ResourceRef></ResourceRef>
+									<ResourceRef></ResourceRef>
+									<ResourceRef></ResourceRef>
+								</Containers>
+								<Utilities>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Utilities>
+							</Software>
+						</Host>
+
+						<Host ResourceUID="22c1f545-a94f-4d65-8181-5fe141be81f8" name="pqa_boc" isVirtual="true">
+							<Hardware>
+								<CPU ResourceUID="9f58830b-8994-4a23-8922-27534d42f679" cpuNumber="4" speed="2.3GHZ"></CPU>
+								<Memory ResourceUID="868ee020-b13c-49e8-9509-27fd79c8834e" memSize="4000MB"></Memory>
+								<Disk ResourceUID="1c80bb90-bfd6-4266-a978-50c6fc1a7673" type="STAT" name="" mount="/var/magima" diskSize="250GB"></Disk>
+								<EthernetIF ResourceUID="20308511-d8e6-41d6-b69d-1b4bed66407d" mac="" bindPrivateIP="10.0.22.8" bindPublicIP="10.0.0.149" bandWidth="1000Mb"></EthernetIF>
+								<EthernetIF ResourceUID="d60baf7e-2b4c-44e3-8583-7c3cc81241f3" mac="" bindPrivateIP="10.0.20.8" bindPublicIP="" bandWidth="1000Mb"></EthernetIF>
+							</Hardware>
+							<Software>
+								<OS>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</OS>
+								<Runtimes>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Runtimes>
+								<Containers>
+									<ResourceRef></ResourceRef>
+									<ResourceRef></ResourceRef>
+									<ResourceRef></ResourceRef>
+								</Containers>
+								<Utilities>
+									<ResourceRef>{ResourceUID}</ResourceRef>
+								</Utilities>
+							</Software>
+						</Host>
+
+
+
+					</Hosts>
+				</Devices>
+				<OperationSystems>
+					<KernelImage ResourceUID="" type="linux|window" name="redhat|Ubuntu|WinXP" version=""></KernelImage>
+				</OperationSystems>
+				<Runtimes>
+					<RuntimeImage ResourceUID="" type="libc|jdk|python|php|ruby|openGL" version=""></RuntimeImage>
+					<RuntimeImage ResourceUID="" type="libc|jdk|python|php|ruby|openGL" version=""></RuntimeImage>
+				</Runtimes>
+				<Utilities>
+					<UtilityImage ResourceUID="" name="gcc|md5|sendmail" version=""></UtilityImage>
+				</Utilities>
+				<Containers>
+
+					<!-- 
+					<ResourceRef>{9b553d55-8f24-4cd0-86d2-00a15cb4d693}</ResourceRef>
+					<ResourceRef>{758865ea-5707-4abc-8eb4-cb9880800c89}</ResourceRef>
+					<ResourceRef>{7d720a2d-f68f-4804-bec2-dc78c08e2b56}</ResourceRef>
+					<ResourceRef>{f8b66aae-6868-4b62-9126-ea7511ca7c69}</ResourceRef>
+					<ResourceRef>{fb74fc3f-f549-439b-b43f-b05a7c6f06b1}</ResourceRef>
+					<ResourceRef>{005fa157-fb0e-4003-b62b-5b42f7f143d4}</ResourceRef>
+					<ResourceRef>{6d1087d3-705a-496b-9fb9-122d0e7cfad4}</ResourceRef> 
+					 -->
+
+					<!-- node01 -->
+					<Container ResourceUID="9b553d55-8f24-4cd0-86d2-00a15cb4d693" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="6d1087d3-705a-496b-9fb9-122d0e7cfad4" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="005fa157-fb0e-4003-b62b-5b42f7f143d4" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="fb74fc3f-f549-439b-b43f-b05a7c6f06b1" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="758865ea-5707-4abc-8eb4-cb9880800c89" language="java" type="tomcat" version="6.0.38" ports="80,443,8080">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="7d720a2d-f68f-4804-bec2-dc78c08e2b56" language="PHP" type="xampp" version="1.8.2-6" ports="80,443">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="f8b66aae-6868-4b62-9126-ea7511ca7c69" language="javascript" type="nodejs" version="0.10.25" ports="80,443">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+
+					<!-- node02 -->
+					<Container ResourceUID="30cf2dac-57bf-4d94-9570-0d17c8d537cf" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="ed29a41d-efa3-4127-ba3d-95a916baa9e6" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="e31cc492-ddff-458a-acb2-165973346471" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="9b7ce70b-0d6c-420d-b1cd-92bfe676cf07" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="7fcd6371-9fe7-480d-a847-fe0c4351c151" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="5ae26e9d-b5ae-4620-94bd-706d8e226235" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<!-- party-->
+					<Container ResourceUID="280f5ca9-4822-4e4c-8089-d087254c5340" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="aa4c47c4-cabd-4703-a6ea-e277303f8feb" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="fe32a3fb-6f5d-4ba4-b424-57c1e501ffb3" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="fea291ad-0dd9-486b-bdc6-e5faf710c804" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="0fa819f4-4371-46a9-bbbe-603e65ad0bac" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="1f4c524a-17c5-4bde-b233-f22e183e950f" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="d0cf26e6-1072-4a14-9e94-b35f53c201a8" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="b4870d9c-d694-451b-8ceb-3d1502b77232" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="0e0d6c44-f5ae-4dbe-a77c-c9db2b1c480e" language="java" type="tomcat" version="6.0.38" ports="80,443,8080">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="53ba361b-5d26-4894-a8a2-11355ab2699e" language="PHP" type="xampp" version="1.8.2-6" ports="80,443">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="ec8e985c-0e02-4569-8b6f-bd1744ae2df6" language="javascript" type="nodejs" version="0.10.25" ports="80,443">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+
+					<!-- node03 -->
+					<Container ResourceUID="669702f3-a129-4f95-b78d-e140f7579392" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="78807080-eadc-4ba6-bdc0-db91b9b58dd1" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="008db8c8-6803-4109-be20-8b943b629326" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="c4de8a08-841b-4138-aaeb-0cb35463a217" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="0d7bc2a3-4813-4255-8d2a-b0ba54bb5a81" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="ecc5efb2-3043-4d07-9e6a-a5fd4e45043f" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="afcdc752-b8fe-4ce0-876d-6d79b72df1cb" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="11b9cb73-5331-4d8d-a657-18b91956dabf" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="aab64964-00c0-4535-8cd3-e418ce801d5d" language="java" type="jetty" version="9.0" ports="">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="2a831382-fe66-42ef-acd0-7883cd806edf" language="java" type="tomcat" version="6.0.38" ports="80,443,8080">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+					<Container ResourceUID="b2660c26-3d6b-42dc-abc7-c6fb782f8c61" language="PHP" type="xampp" version="1.8.2-6" ports="80,443">
+						<ContainerPartImage ResourceUID="" name="" version="" format=""></ContainerPartImage>
+					</Container>
+
+				</Containers>
+				<SoftwareParts><!-- 存放极少数无法归类的软件-->
+					<SoftwarePart ResourceUID="" name="" version="" format=".jar|.war|.so|.zip"></SoftwarePart>
+				</SoftwareParts>
+				<VMImages>
+					<VMImage ResourceUID="" name="" URI="" CreatedDatetime="2015-03-14 12:48">
+						<OSRef id="" >{ResourceUID}</OSRef>
+						<RuntimeRef id=""></RuntimeRef>
+						<UtilitiesRef id=""></UtilitiesRef>
+						<ContainerRef id=""></ContainerRef>
+						<SoftwarePartRef id=""></SoftwarePartRef>
+					</VMImage>
+				</VMImages>
+				<InfraApplications>
+					<InfraApplication ResourceUID="" name="bindDNS" version="" endpoint=""></InfraApplication>
+					<InfraApplication ResourceUID="" name="DHCP" version="" endpoint=""></InfraApplication>
+				</InfraApplications>
+				<ThirdInfraApplications>
+					<ThirdInfraApplication ResourceUID="" name="publicDNS" version="1.0" endpoint="http://xx" serviceProvider=""></ThirdInfraApplication>
+					<ThirdInfraApplication ResourceUID="" name="ntp" version="1.0" endpoint="http://xx" serviceProvider="sina"></ThirdInfraApplication>
+				</ThirdInfraApplications>
+			</IAAS>
+			<DAAS><!-- DAAS 属于PAAS 层的一个子类 -->
+			</DAAS>
+		</DataCenter>
+	</EnvResources>
+
+
+	<EnvResourceGroups>
+		<EnvCluster ResourceUID="" Name="" isCrossNetwork="true">
+			<CrossNetworks>
+				<NetworkRef>resource_uid:xxx</NetworkRef>
+			</CrossNetworks>
+			<Hosts>
+				<!-- 被“环境集群”包含的资源任何设备资源；但任何时刻一个主机资源只能被一个环境集群包含-->
+				<HostRef >host_uid=""</HostRef>
+			</Hosts>
+		</EnvCluster>
+	</EnvResourceGroups>
+</DeployDesign>
+

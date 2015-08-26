@@ -1,0 +1,188 @@
+<DeployDesign>
+	<DesignMeta>
+		<Author></Author>
+		<Datetime></Datetime>
+		<Version></Version>
+	</DesignMeta>
+
+	<DeploySchema  type="Tobe">
+		<TargetInstances>
+			<!-- topic -->
+			<!-- zookeeper -->
+			<TargetInstance id="3" InstanceUID="6907751e-c3e3-4472-a897-2b46162c6959" TargetUID="{faa734d8-11a6-4b4b-b5ab-f15b07c87129}"></TargetInstance>
+			<TargetInstance id="4" InstanceUID="d6ceb100-b7bd-43d0-90a9-9d24e917ad90" TargetUID="{faa734d8-11a6-4b4b-b5ab-f15b07c87129}"></TargetInstance>
+			<TargetInstance id="5" InstanceUID="38b1adc2-a16e-4642-8d16-6fa2ba5e10f4" TargetUID="{faa734d8-11a6-4b4b-b5ab-f15b07c87129}"></TargetInstance>
+			<TargetInstance id="6" InstanceUID="a66b8f95-cbef-416e-9037-5ccca25d60cd" TargetUID="{d0f67793-c9f0-4824-bd0b-9c5dad4f3e4f}"></TargetInstance>
+			<TargetInstance id="7" InstanceUID="c2db60d6-f9ea-4831-b563-05614f545bc2" TargetUID="{d0f67793-c9f0-4824-bd0b-9c5dad4f3e4f}"></TargetInstance>
+			<TargetInstance id="8" InstanceUID="d0f3d6d4-4317-4fc7-9af3-897167999d00" TargetUID="{b73051cd-ec84-490d-8d14-ef5f8c9e302c}"></TargetInstance>
+			<TargetInstance id="9" InstanceUID="5177d653-c17c-497c-83c7-6241568ddfd3" TargetUID="{b73051cd-ec84-490d-8d14-ef5f8c9e302c}"></TargetInstance>
+			<TargetInstance id="10" InstanceUID="0deecb1c-8a1a-465c-917b-34dc900b6a1f" TargetUID="{837e13cc-8f98-4cbd-8cae-f113340524a7}"></TargetInstance>
+			<TargetInstance id="11" InstanceUID="6d98a9e2-aec8-49e9-a806-6feee57d3584" TargetUID="{5f67833e-a24e-418c-a349-57c6b279e7d7}"></TargetInstance>
+			<TargetInstance id="12" InstanceUID="73a54726-6bd1-473e-9576-78293a60f81b" TargetUID="{4ae45680-0332-4ed9-a3fd-58859ffff4d7}"></TargetInstance>
+			<TargetInstance id="13" InstanceUID="e46e823f-89db-4f9e-827f-9dd65927014a" TargetUID="{aec6b425-de39-4335-be9e-a6582ebbe6d3}"></TargetInstance>
+			<TargetInstance id="14" InstanceUID="a14bcee3-5e7f-4404-a2c8-f5e24aa45077" TargetUID="{dcbf674c-21e9-492f-b24a-2a78284bea4c}"></TargetInstance>
+			<TargetInstance id="15" InstanceUID="b0a192b2-d015-4285-b6fb-bd4c1ed91eed" TargetUID="{ee3a68eb-42cd-4c44-ad8a-6e04db921c24}"></TargetInstance>
+			<TargetInstance id="16" InstanceUID="fff7928a-704c-47a9-af1f-cd767823d2a7" TargetUID="{dcbf674c-21e9-492f-b24a-2a78284bea4c}"></TargetInstance>
+			<TargetInstance id="17" InstanceUID="26f75b98-eb98-42f7-b133-4e43e656cef8" TargetUID="{100ae676-a842-46d0-9713-093e4b333839}"></TargetInstance>
+			<TargetInstance id="18" InstanceUID="3e79e1f6-8da6-4514-8d66-2dba17fe553f" TargetUID="{100ae676-a842-46d0-9713-093e4b333839}"></TargetInstance>
+			<TargetInstance id="19" InstanceUID="97f292b3-e388-4c3f-9bf0-89c900220d70" TargetUID="{c43b39fa-25e9-43f7-ac8c-fabd80562ba3}"></TargetInstance>
+			<TargetInstance id="20" InstanceUID="8ec83f64-ee14-4dbb-b586-1ae623fecd0c" TargetUID="{c43b39fa-25e9-43f7-ac8c-fabd80562ba3}"></TargetInstance>
+			<TargetInstance id="21" InstanceUID="e585dac3-4db0-4858-8c57-c1e3a61629a8" TargetUID="{aa34575a-cc5c-4cdb-9b75-24c6de6a6c0a}"></TargetInstance>
+			<TargetInstance id="22" InstanceUID="5562831e-45a1-40ec-aac4-55aea36bbef7" TargetUID="{aa34575a-cc5c-4cdb-9b75-24c6de6a6c0a}"></TargetInstance>
+			<TargetInstance id="23" InstanceUID="c9e9cb8c-a51b-4808-b46c-83d97b0c4923" TargetUID="{dcd07660-4fee-4e1f-aebf-b98c8d3f2056}"></TargetInstance>
+			<TargetInstance id="24" InstanceUID="69f6ad5b-b307-47a4-b7d9-fc0c211952e0" TargetUID="{c17131c2-0010-4049-a6de-d977f318bcc7}"></TargetInstance>
+			<TargetInstance id="25" InstanceUID="1f9da79a-5655-4c6d-b195-38aba3dd1286" TargetUID="{c17131c2-0010-4049-a6de-d977f318bcc7}"></TargetInstance>
+			<TargetInstance id="26" InstanceUID="b96ac15c-dff6-4dab-891b-b80f1431a7b7" TargetUID="{a1353671-3be6-4a6a-9034-fc266977f87f}"></TargetInstance>
+			<TargetInstance id="27" InstanceUID="0607bc65-c025-4e0b-b18e-fbe5e5303de5" TargetUID="{a1353671-3be6-4a6a-9034-fc266977f87f}"></TargetInstance>
+			<TargetInstance id="28" InstanceUID="fefbacc9-24ba-496c-80e4-290ce78b8d4b" TargetUID="{0b08a5c0-7374-46ae-9e18-fd16f80b7ac6}"></TargetInstance>
+			<TargetInstance id="29" InstanceUID="5537a3c8-bb72-4d42-92f5-f14a60d7f04d" TargetUID="{0b08a5c0-7374-46ae-9e18-fd16f80b7ac6}"></TargetInstance>
+			<TargetInstance id="30" InstanceUID="36e8c1db-b4b5-42a4-a2e5-790365febf80" TargetUID="{6dab49f8-6328-4a0e-bf39-374e32d331f3}"></TargetInstance>
+			<TargetInstance id="31" InstanceUID="96e2d8d8-7460-477b-a604-53266ad6e49c" TargetUID="{6dab49f8-6328-4a0e-bf39-374e32d331f3}"></TargetInstance>
+			<TargetInstance id="32" InstanceUID="78582d41-ad6d-430b-8141-2e812f1591f1" TargetUID="{53336691-bd46-4411-819a-790f4a1d0b58}"></TargetInstance>
+			<TargetInstance id="33" InstanceUID="344baefc-67e8-455c-ad12-bae315722bed" TargetUID="{53336691-bd46-4411-819a-790f4a1d0b58}"></TargetInstance>
+			<TargetInstance id="34" InstanceUID="a7d94d1d-4691-444b-a757-f5a47b52dc06" TargetUID="{6c9b8c1f-8ca0-4226-b2e8-ba46973d775d}"></TargetInstance>
+			<TargetInstance id="35" InstanceUID="75b706d2-9144-4929-ac45-2df793652a5d" TargetUID="{6c9b8c1f-8ca0-4226-b2e8-ba46973d775d}"></TargetInstance>
+			<TargetInstance id="36" InstanceUID="b0802e2c-f4e3-412e-98d6-c2ddf7e6ed67" TargetUID="{772472eb-b124-48a9-8205-6635725ea7e0}"></TargetInstance>
+			<TargetInstance id="37" InstanceUID="6687eb40-712f-4767-958c-01649245e372" TargetUID="{772472eb-b124-48a9-8205-6635725ea7e0}"></TargetInstance>
+			<TargetInstance id="38" InstanceUID="16c7da32-acf3-4af0-9129-388c5ca365c3" TargetUID="{1f083ac0-d071-41cf-b9fd-f14baab69bea}"></TargetInstance>
+			<TargetInstance id="39" InstanceUID="07eaee0c-0bc6-458f-86e7-1b7a6ed9c033" TargetUID="{1f083ac0-d071-41cf-b9fd-f14baab69bea}"></TargetInstance>
+			<TargetInstance id="40" InstanceUID="407900ba-9346-48bf-b217-82950f34b85c" TargetUID="{6b470df0-9f6a-4da8-8f5e-17de26b1101f}"></TargetInstance>
+			<TargetInstance id="41" InstanceUID="73bf3287-367e-4139-ba47-7113a5559b24" TargetUID="{6b470df0-9f6a-4da8-8f5e-17de26b1101f}"></TargetInstance>
+			<TargetInstance id="42" InstanceUID="f8bdd5a9-dcbb-4405-a0e9-abd48b6df504" TargetUID="{65d1c2f2-c6f5-4adb-ac40-83062962bbf2}"></TargetInstance>
+			<TargetInstance id="43" InstanceUID="4131f989-3370-4578-9acb-c96e8e09197f" TargetUID="{65d1c2f2-c6f5-4adb-ac40-83062962bbf2}"></TargetInstance>
+			<TargetInstance id="44" InstanceUID="7c2a3939-8a07-4e40-b832-ad2daa816952" TargetUID="{858770a1-f9a3-47e1-8b98-830d22e29e78}"></TargetInstance>
+			<TargetInstance id="45" InstanceUID="e74bec5f-6984-478d-8a21-ed2b3936452d" TargetUID="{858770a1-f9a3-47e1-8b98-830d22e29e78}"></TargetInstance>
+			<TargetInstance id="46" InstanceUID="c755f0b7-6586-4b8c-8111-df173e8a7345" TargetUID="{b3613934-d592-419c-8d5b-1c1c2b207f41}"></TargetInstance>
+			<TargetInstance id="47" InstanceUID="518d9f99-184b-4b5f-a444-7c069cfae67a" TargetUID="{b3613934-d592-419c-8d5b-1c1c2b207f41}"></TargetInstance>
+			<TargetInstance id="48" InstanceUID="647d6148-840a-4967-8a6a-b46c6995490c" TargetUID="{a983a1d3-def0-42ac-8d95-6f27fa3df5bf}"></TargetInstance>
+			<TargetInstance id="49" InstanceUID="b00ea7b3-f621-4253-9046-aa0e73eca7f5" TargetUID="{a983a1d3-def0-42ac-8d95-6f27fa3df5bf}"></TargetInstance>
+			<TargetInstance id="50" InstanceUID="69a5a886-a66d-4316-93c9-10691b32f9cd" TargetUID="{5e868659-c7ba-485a-94eb-7ece6bfbf77c}"></TargetInstance>
+			<TargetInstance id="51" InstanceUID="66fdac11-5503-4fec-ba95-fd422d5ce542" TargetUID="{5e868659-c7ba-485a-94eb-7ece6bfbf77c}"></TargetInstance>
+			<TargetInstance id="52" InstanceUID="99701fa7-91d8-48f5-8cc1-06824e83d603" TargetUID="{c5d0f63f-596d-41c3-aba8-f0d821540a97}"></TargetInstance>
+			<TargetInstance id="53" InstanceUID="99da2e44-e6d1-4e3c-80d5-d1aeaf277e2f" TargetUID="{c5d0f63f-596d-41c3-aba8-f0d821540a97}"></TargetInstance>
+			<TargetInstance id="54" InstanceUID="edbf033f-b20a-4863-88c2-5a21ead530dc" TargetUID="{78c756e5-ecce-43ba-9b09-1ff825a10d85}"></TargetInstance>
+			<TargetInstance id="55" InstanceUID="5ce225a1-68c7-4a1c-869c-38959422bf67" TargetUID="{78c756e5-ecce-43ba-9b09-1ff825a10d85}"></TargetInstance>
+			<TargetInstance id="56" InstanceUID="bddede36-2903-456a-a564-0e3199ac6139" TargetUID="{6e276847-e777-4860-8fe1-e381bf7ebdeb}"></TargetInstance>
+			<TargetInstance id="57" InstanceUID="bff5057c-c9d9-46bb-b88b-cddd7473a636" TargetUID="{6e276847-e777-4860-8fe1-e381bf7ebdeb}"></TargetInstance>
+			<TargetInstance id="58" InstanceUID="f3903083-f1d4-45cd-b655-bc30ef7d7563" TargetUID="{40309b26-9595-4606-aefc-eb7ed5bb2d8c}"></TargetInstance>
+			<TargetInstance id="59" InstanceUID="e656856e-7dfa-49d9-8cfb-0b05f63d22bf" TargetUID="{40309b26-9595-4606-aefc-eb7ed5bb2d8c}"></TargetInstance>
+			<TargetInstance id="60" InstanceUID="8e9e3b66-06bc-4326-a5b8-820ecb4cf1ad" TargetUID="{39a14095-38ab-4712-82a4-b1c0011d9545}"></TargetInstance>
+			<TargetInstance id="61" InstanceUID="c46c9876-0702-4533-8d3a-40b3b90bb66c" TargetUID="{39a14095-38ab-4712-82a4-b1c0011d9545}"></TargetInstance>
+			<TargetInstance id="62" InstanceUID="36f13760-3b1a-4dd8-a519-c4be201b5014" TargetUID="{0af11771-589b-4e84-b1ad-64795a16ec46}"></TargetInstance>
+			<TargetInstance id="63" InstanceUID="daaeae7c-d87e-400e-b2b4-3d885d2bdda7" TargetUID="{0af11771-589b-4e84-b1ad-64795a16ec46}"></TargetInstance>
+
+		</TargetInstances>
+		<ContainerInstances>
+
+			<ContainerInstance EnvResourceUID="{9b553d55-8f24-4cd0-86d2-00a15cb4d693}"></ContainerInstance> <!-- jetty-->
+			<ContainerInstance EnvResourceUID="{758865ea-5707-4abc-8eb4-cb9880800c89}"></ContainerInstance> <!-- tomcat -->
+			<ContainerInstance EnvResourceUID="{7d720a2d-f68f-4804-bec2-dc78c08e2b56}"></ContainerInstance> <!-- xampp -->
+			<ContainerInstance EnvResourceUID="{30cf2dac-57bf-4d94-9570-0d17c8d537cf}"></ContainerInstance> 
+			<ContainerInstance EnvResourceUID="{0e0d6c44-f5ae-4dbe-a77c-c9db2b1c480e}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{53ba361b-5d26-4894-a8a2-11355ab2699e}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{669702f3-a129-4f95-b78d-e140f7579392}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{2a831382-fe66-42ef-acd0-7883cd806edf}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{b2660c26-3d6b-42dc-abc7-c6fb782f8c61}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{fb74fc3f-f549-439b-b43f-b05a7c6f06b1}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{6d1087d3-705a-496b-9fb9-122d0e7cfad4}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{005fa157-fb0e-4003-b62b-5b42f7f143d4}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{f8b66aae-6868-4b62-9126-ea7511ca7c69}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{ed29a41d-efa3-4127-ba3d-95a916baa9e6}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{e31cc492-ddff-458a-acb2-165973346471}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{9b7ce70b-0d6c-420d-b1cd-92bfe676cf07}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{7fcd6371-9fe7-480d-a847-fe0c4351c151}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{5ae26e9d-b5ae-4620-94bd-706d8e226235}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{280f5ca9-4822-4e4c-8089-d087254c5340}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{aa4c47c4-cabd-4703-a6ea-e277303f8feb}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{fe32a3fb-6f5d-4ba4-b424-57c1e501ffb3}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{fea291ad-0dd9-486b-bdc6-e5faf710c804}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{0fa819f4-4371-46a9-bbbe-603e65ad0bac}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{1f4c524a-17c5-4bde-b233-f22e183e950f}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{d0cf26e6-1072-4a14-9e94-b35f53c201a8}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{b4870d9c-d694-451b-8ceb-3d1502b77232}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{ec8e985c-0e02-4569-8b6f-bd1744ae2df6}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{78807080-eadc-4ba6-bdc0-db91b9b58dd1}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{008db8c8-6803-4109-be20-8b943b629326}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{c4de8a08-841b-4138-aaeb-0cb35463a217}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{0d7bc2a3-4813-4255-8d2a-b0ba54bb5a81}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{ecc5efb2-3043-4d07-9e6a-a5fd4e45043f}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{afcdc752-b8fe-4ce0-876d-6d79b72df1cb}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{11b9cb73-5331-4d8d-a657-18b91956dabf}"></ContainerInstance>
+			<ContainerInstance EnvResourceUID="{aab64964-00c0-4535-8cd3-e418ce801d5d}"></ContainerInstance>
+
+		</ContainerInstances>
+
+		<DeployMapping mode="adhoc Mapping">
+
+			<AdhocMappingItem>{b0a192b2-d015-4285-b6fb-bd4c1ed91eed}:{9b553d55-8f24-4cd0-86d2-00a15cb4d693}</AdhocMappingItem>
+			<!--apigw -->
+			<AdhocMappingItem>{26f75b98-eb98-42f7-b133-4e43e656cef8}:{30cf2dac-57bf-4d94-9570-0d17c8d537cf}</AdhocMappingItem>
+			<AdhocMappingItem>{3e79e1f6-8da6-4514-8d66-2dba17fe553f}:{669702f3-a129-4f95-b78d-e140f7579392}</AdhocMappingItem>
+			<!--slbgw -->
+			<AdhocMappingItem>{97f292b3-e388-4c3f-9bf0-89c900220d70}:{f8b66aae-6868-4b62-9126-ea7511ca7c69}</AdhocMappingItem>
+			<AdhocMappingItem>{8ec83f64-ee14-4dbb-b586-1ae623fecd0c}:{ec8e985c-0e02-4569-8b6f-bd1744ae2df6}</AdhocMappingItem>
+			<!-- slbmeta server -->
+			<AdhocMappingItem>{e585dac3-4db0-4858-8c57-c1e3a61629a8}:{fb74fc3f-f549-439b-b43f-b05a7c6f06b1}</AdhocMappingItem>
+			<AdhocMappingItem>{5562831e-45a1-40ec-aac4-55aea36bbef7}:{b4870d9c-d694-451b-8ceb-3d1502b77232}</AdhocMappingItem>
+
+			<!-- nginx boss4d -->
+
+			<!-- appcenterservice -->
+			<AdhocMappingItem>{78582d41-ad6d-430b-8141-2e812f1591f1}:{758865ea-5707-4abc-8eb4-cb9880800c89}</AdhocMappingItem>
+			<AdhocMappingItem>{344baefc-67e8-455c-ad12-bae315722bed}:{0e0d6c44-f5ae-4dbe-a77c-c9db2b1c480e}</AdhocMappingItem>
+			<!-- location -->
+			<AdhocMappingItem>{a7d94d1d-4691-444b-a757-f5a47b52dc06}:{758865ea-5707-4abc-8eb4-cb9880800c89}</AdhocMappingItem>
+			<AdhocMappingItem>{75b706d2-9144-4929-ac45-2df793652a5d}:{0e0d6c44-f5ae-4dbe-a77c-c9db2b1c480e}</AdhocMappingItem>
+			<!-- saassetingservice -->
+			<AdhocMappingItem>{b0802e2c-f4e3-412e-98d6-c2ddf7e6ed67}:{758865ea-5707-4abc-8eb4-cb9880800c89}</AdhocMappingItem>
+			<AdhocMappingItem>{6687eb40-712f-4767-958c-01649245e372}:{0e0d6c44-f5ae-4dbe-a77c-c9db2b1c480e}</AdhocMappingItem>
+			<!-- webcontentservice-->
+			<AdhocMappingItem>{16c7da32-acf3-4af0-9129-388c5ca365c3}:{758865ea-5707-4abc-8eb4-cb9880800c89}</AdhocMappingItem>
+			<AdhocMappingItem>{07eaee0c-0bc6-458f-86e7-1b7a6ed9c033}:{0e0d6c44-f5ae-4dbe-a77c-c9db2b1c480e}</AdhocMappingItem>
+			<!--  imageservice -->
+			<AdhocMappingItem>{407900ba-9346-48bf-b217-82950f34b85c}:{d0cf26e6-1072-4a14-9e94-b35f53c201a8}</AdhocMappingItem>
+			<AdhocMappingItem>{73bf3287-367e-4139-ba47-7113a5559b24}:{aab64964-00c0-4535-8cd3-e418ce801d5d}</AdhocMappingItem>
+			<!-- docservice -->
+			<AdhocMappingItem>{f8bdd5a9-dcbb-4405-a0e9-abd48b6df504}:{758865ea-5707-4abc-8eb4-cb9880800c89}</AdhocMappingItem>
+			<AdhocMappingItem>{4131f989-3370-4578-9acb-c96e8e09197f}:{0e0d6c44-f5ae-4dbe-a77c-c9db2b1c480e}</AdhocMappingItem>
+			<!-- asset -->
+			<AdhocMappingItem>{7c2a3939-8a07-4e40-b832-ad2daa816952}:{005fa157-fb0e-4003-b62b-5b42f7f143d4}</AdhocMappingItem>
+			<AdhocMappingItem>{e74bec5f-6984-478d-8a21-ed2b3936452d}:{1f4c524a-17c5-4bde-b233-f22e183e950f}</AdhocMappingItem>
+			<!-- invitation -->
+			<AdhocMappingItem>{c755f0b7-6586-4b8c-8111-df173e8a7345}:{6d1087d3-705a-496b-9fb9-122d0e7cfad4}</AdhocMappingItem>
+			<AdhocMappingItem>{518d9f99-184b-4b5f-a444-7c069cfae67a}:{0fa819f4-4371-46a9-bbbe-603e65ad0bac}</AdhocMappingItem>
+			<!-- contact -->
+			<AdhocMappingItem>{647d6148-840a-4967-8a6a-b46c6995490c}:{fea291ad-0dd9-486b-bdc6-e5faf710c804}</AdhocMappingItem>
+			<AdhocMappingItem>{b00ea7b3-f621-4253-9046-aa0e73eca7f5}:{11b9cb73-5331-4d8d-a657-18b91956dabf}</AdhocMappingItem>
+			<!-- notifyservice-->
+			<AdhocMappingItem>{69a5a886-a66d-4316-93c9-10691b32f9cd}:{fe32a3fb-6f5d-4ba4-b424-57c1e501ffb3}</AdhocMappingItem>
+			<AdhocMappingItem>{66fdac11-5503-4fec-ba95-fd422d5ce542}:{afcdc752-b8fe-4ce0-876d-6d79b72df1cb}</AdhocMappingItem>
+			<!-- party -->
+			<AdhocMappingItem>{99701fa7-91d8-48f5-8cc1-06824e83d603}:{280f5ca9-4822-4e4c-8089-d087254c5340}</AdhocMappingItem>
+			<AdhocMappingItem>{99da2e44-e6d1-4e3c-80d5-d1aeaf277e2f}:{ecc5efb2-3043-4d07-9e6a-a5fd4e45043f}</AdhocMappingItem>
+			<!-- privchat -->
+			<AdhocMappingItem>{edbf033f-b20a-4863-88c2-5a21ead530dc}:{5ae26e9d-b5ae-4620-94bd-706d8e226235}</AdhocMappingItem>
+			<AdhocMappingItem>{5ce225a1-68c7-4a1c-869c-38959422bf67}:{0d7bc2a3-4813-4255-8d2a-b0ba54bb5a81}</AdhocMappingItem>
+			<!-- servshell-->
+			<AdhocMappingItem>{bddede36-2903-456a-a564-0e3199ac6139}:{7fcd6371-9fe7-480d-a847-fe0c4351c151}</AdhocMappingItem>
+			<AdhocMappingItem>{bff5057c-c9d9-46bb-b88b-cddd7473a636}:{c4de8a08-841b-4138-aaeb-0cb35463a217}</AdhocMappingItem>
+			<!-- sysadmin-->
+			<AdhocMappingItem>{f3903083-f1d4-45cd-b655-bc30ef7d7563}:{9b7ce70b-0d6c-420d-b1cd-92bfe676cf07}</AdhocMappingItem>
+			<AdhocMappingItem>{e656856e-7dfa-49d9-8cfb-0b05f63d22bf}:{c4de8a08-841b-4138-aaeb-0cb35463a217}</AdhocMappingItem>
+			<!-- topic -->
+			<AdhocMappingItem>{8e9e3b66-06bc-4326-a5b8-820ecb4cf1ad}:{e31cc492-ddff-458a-acb2-165973346471}</AdhocMappingItem>
+			<AdhocMappingItem>{c46c9876-0702-4533-8d3a-40b3b90bb66c}:{008db8c8-6803-4109-be20-8b943b629326}</AdhocMappingItem>
+			<!--useraccount-->
+			<AdhocMappingItem>{36f13760-3b1a-4dd8-a519-c4be201b5014}:{ed29a41d-efa3-4127-ba3d-95a916baa9e6}</AdhocMappingItem>
+			<AdhocMappingItem>{daaeae7c-d87e-400e-b2b4-3d885d2bdda7}:{78807080-eadc-4ba6-bdc0-db91b9b58dd1}</AdhocMappingItem>
+
+			<!--
+				<AdhocMappingItem>{}:{}</AdhocMappingItem>
+				<AdhocMappingItem>{aa6a2f37-5be9-421e-9417-98dc5020b6ca}:{9b553d55-8f24-4cd0-86d2-00a15cb4d693}</AdhocMappingItem>
+				<AdhocMappingItem>{aa6a2f37-5be9-421e-9417-98dc5020b6ca}:{9b553d55-8f24-4cd0-86d2-00a15cb4d693}</AdhocMappingItem>
+			-->
+
+		</DeployMapping>
+	</DeploySchema>
+</DeployDesign>
+

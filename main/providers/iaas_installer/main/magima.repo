@@ -1,0 +1,5 @@
+[localyumrepo_el6]
+name = localyumrepo_el6
+baseurl = http://repo-server:1670/rpms
+enabled = 1
+gpgcheck = 0
